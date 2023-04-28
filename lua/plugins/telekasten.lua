@@ -1,20 +1,18 @@
 return {
   "renerocksai/telekasten.nvim",
-  dependencies = { "nvim-telescope/telescope.nvim" },
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
+
+  cmd = { "Telekasten" },
   config = function()
-    local home = vim.fn.expand("~/nsecondbrain/") -- Put the name of your notes directory here
     require("telekasten").setup({
-      -- template for new notes (new_note, follow_link)
-      -- set to `nil` or do not specify if you do not want a template
-      template_new_note = home .. "/" .. "templates/new_note.md",
-
-      -- template for newly created daily notes (goto_today)
-      -- set to `nil` or do not specify if you do not want a template
-      template_new_daily = home .. "/" .. "templates/daily.md",
-
-      -- template for newly created weekly notes (goto_thisweek)
-      -- set to `nil` or do not specify if you do not want a template
-      template_new_weekly = home .. "/" .. "templates/weekly.md",
+      home = vim.fn.expand("~/nsecondbrain"),
+      template_new_note = vim.fn.expand("~/nsecondbrain/templates/new_note.md"),
+      template_daily = vim.fn.expand("~/nsecondbrain/templates/daily.md"),
+      template_weekly = vim.fn.expand("~/nsecondbrain/templates/weekly.md"),
+      media_previewer = "catimg-previewer",
+      journal_auto_open = true,
     })
   end,
 }
