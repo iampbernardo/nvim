@@ -10,7 +10,6 @@ return {
   config = function()
     require("telekasten").setup({
       home = home,
-
       -- -- dir names for special notes (absolute path or subdir name)
       dailies = home .. "/" .. "daily",
       weeklies = home .. "/" .. "weekly",
@@ -29,8 +28,8 @@ return {
       -- templates notation
       --templates = vim.fn.expand("~/nsecondbrain/templates"),
       template_handling = "smart",
-
       journal_auto_open = true,
+      tag_notation = "#tag",
     })
   end,
 }
