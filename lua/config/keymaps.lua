@@ -19,3 +19,7 @@ vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
 
 -- Call insert link automatically when we start typing a link
 vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
+
+-- Esc is too far away
+vim.keymap.set("i", "kj", "<Esc>")
+vim.keymap.set("i", "jk", "<Esc>")
