@@ -1,4 +1,4 @@
-local home = vim.fn.expand("~/nsecondbrain")
+local home = vim.fn.expand("~/repositories/nsecondbrain")
 return {
   "renerocksai/telekasten.nvim",
   dependencies = {
@@ -30,6 +30,14 @@ return {
       template_handling = "smart",
       journal_auto_open = true,
       tag_notation = "#tag",
+
+      vaults = {
+        JD = {
+          home = vim.fn.expand("~/repositories/johnny-decimal-index"),
+          tag_notation = "#tag",
+          -- if true, telekasten will be enabled when opening a note within the configured home
+        },
+      },
     })
   end,
 }
